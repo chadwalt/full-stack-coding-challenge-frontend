@@ -1,9 +1,14 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from "next";
 
-import { allAirports } from '../../../models/airport'
+import { allAirports } from "../../../models/airport";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const airports = await allAirports()
+  const { page, limit } = req.query;
 
-  res.status(200).json(airports)
-}
+  const airports = await allAirports({
+    limit: Number(limit),
+    page: Number(page),
+  });
+
+  res.status(200).json(airports);
+};

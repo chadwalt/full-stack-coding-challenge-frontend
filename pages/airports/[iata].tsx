@@ -12,7 +12,7 @@ interface Props {
 const Page: NextPage<Props> = ({ airport }) => {
   return (
     <Layout>
-      <h1 className="mb-4 text-2xl font-bold">Airport: {airport.name}</h1>
+      <h1 className="mb-4 text-2xl font-bold text-center">Airport: {airport.name}</h1>
       <Link className="text-blue-400 hover:text-blue-600 hover:underline" href="/">
         ← Back to overview
       </Link>
